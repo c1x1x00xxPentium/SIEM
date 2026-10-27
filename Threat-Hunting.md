@@ -82,6 +82,21 @@ General Examples:
 - An adversary is using Kerberoasting attack techniques to obtain valid credentials.
 
 
+### On Creating Detections...
+It's not always worth it! take these questions into consideration when deciding if its worth building a detection at all:
+The 5 Pillars of GATES as outlined by Nebulock
+- **G:** Generalizable – Is this a repeatable behavior or a one-off?
+  - The logic must catch the broader attacker technique or behavior rather than a hyper-specific artifact (like a single IP address or hash) unique to that specific incident.
+- **A:** Additive – Does it fill a real gap in your coverage?
+  - You must ensure the detection provides new visibility and doesn't simply duplicate an alert that your EDR, SIEM, or existing analytics are already catching.
+- **T:** Tunable – Can you tell the attack apart from normal activity?
+  - The rule must be refined easily to filter out benign organizational behavior so it doesn't cause alert fatigue or overwhelm security analysts.
+- **E:** Exposure-tested – Have you mapped out how it can be bypassed?
+  - This ensures you understand the limitations of the rule, including how an attacker might modify their behavior to evade the detection logic.
+- **S:** Sustainable – Is the logic reliably visible, and is the long-term upkeep worth the risk?
+  - This addresses data pipeline reliability and ensures the engineering team can maintain the rule over time without excessive overhead.
+
+
 # Resources
 - https://hackforlab.com/threat-hunting-scenario/
 - https://www.threathunting.net/files/hunt-evil-practical-guide-threat-hunting.pdf
